@@ -12,10 +12,14 @@
   },
   "author": "Vidar Eldøy <vidar@eldoy.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fugroup/presang-demo"
+  },
   "devDependencies": {},
   "dependencies": {
     "conficurse": "0.0.8",
-    "presang": "0.1.1",
+    "presang": "0.1.2",
     "pretty": "^2.0.0",
     "sirloin": "^0.13.1",
     "waveorb-client": "^0.1.3"
