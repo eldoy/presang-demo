@@ -11,7 +11,7 @@
   "devDependencies": {},
   "dependencies": {
     "conficurse": "0.0.8",
-    "presang": "0.0.1",
+    "presang": "0.0.2",
     "pretty": "^2.0.0",
     "sirloin": "^0.13.1",
     "waveorb-client": "^0.1.3"
