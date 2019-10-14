@@ -1,5 +1,5 @@
 # Presang demo
-Demo of [Presang](https://github.com/fugroup/presang)
+Demo of [Presang](https://github.com/fugroup/presang). This can be used as a starting point for new apps.
 
 ### Install
 Just clone this repo and start developing your app:
@@ -8,7 +8,7 @@ Just clone this repo and start developing your app:
 npm i
 
 // Start the server and navigate to http://localhost:5000
-nodemon server.js
+presang
 ```
 
 ### Usage
