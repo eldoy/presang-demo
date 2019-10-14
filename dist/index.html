@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><title>Home page</title><link rel="stylesheet" href="/app.css" type="text/css"><script>window.q=function q(s){return document.querySelector(s)}</script><script>!function(){var t=function(t){t=(t||"").trim().toLowerCase();var n=[],i=[];return{setAttribute:function(t,i){n.push(!0===i?t:t+'="'+i+'"')},appendChild:function(t){i.push(t)},toString:function(){return"<"+t+(n.length?" "+n.join(" "):"")+">"+(this.textContent||"")+i.join("")+(null===this.textContent?"":"</"+t+">")}}};window.h=function(n,i,e,o){var r=t(n);for(var u in void 0!==i&&(r.textContent=i),e){e[u]&&r.setAttribute(u,e[u])}if(o)for(var f=0;f<o.length;f++)r.appendChild(o[f]);return r.toString()}}()</script><script src="/waveorb.js"></script><script>window.api = waveorb("http://localhost:4000")</script></head><body><nav><a href="/">Home</a><a href="/about">About</a></nav><div><h1>Hello</h1><label for="create">Add a new project</label><br></br><div id="errors"></div><input id="create" type="text"></input><button onclick="createProject()">Add</button><div id="fields"></div><div id="list">Loading...</div><script>var projects = null;
+async function renderProjectList () {
+  if (!projects) {
+    projects = await api.fetch({ path: 'listProjects' })
+  }
+  q('#list').innerHTML = h(
+    'div',
+    projects.length ? '' : 'No projects found',
+    {},
+    projects.map(x => h('div', x.name))
+  )
+};
+async function createProject () {
+  var projectName = q('input').value
+  q('#errors').textContent = ''
+  q('#fields').textContent = ''
+  var result = await api.fetch({
+    path: 'createProject',
+    data: {
+      values: {
+        name: projectName
+      }
+    }
+  })
+  if (result.errors) {
+    q('#errors').textContent = result.errors.message
+    q('#fields').textContent = result.errors.values.name
+  } else {
+    q('input').value = ''
+    projects.unshift(result)
+    renderProjectList()
+  }
+};
+renderProjectList()</script></div></body></html>

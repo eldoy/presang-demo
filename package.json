@@ -4,14 +4,18 @@
   "description": "Presang demo",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist",
+    "serve": "presang serve",
+    "build": "npm run clean && presang build",
+    "help": "presang help"
   },
   "author": "Vidar Eldøy <vidar@eldoy.com>",
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
     "conficurse": "0.0.8",
-    "presang": "0.0.2",
+    "presang": "0.1.1",
     "pretty": "^2.0.0",
     "sirloin": "^0.13.1",
     "waveorb-client": "^0.1.3"
