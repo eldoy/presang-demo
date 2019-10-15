@@ -2,7 +2,6 @@
   "name": "presang-demo",
   "version": "0.0.1",
   "description": "Presang demo",
-  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist",
@@ -19,7 +18,7 @@
   "devDependencies": {},
   "dependencies": {
     "conficurse": "0.0.8",
-    "presang": "0.1.2",
+    "presang": "0.1.5",
     "pretty": "^2.0.0",
     "sirloin": "^0.13.1",
     "waveorb-client": "^0.1.3"
